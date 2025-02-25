@@ -8,7 +8,7 @@ from nltk.tokenize import sent_tokenize
 
 def fetch_article(url):
     """Загружает HTML страницы и извлекает основной текст"""
-    url = url.strip()  # бля пробелы уберу хуй знает
+    url = url.strip()  # убираем пробелы
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
         "Referer": "https://www.google.com",
@@ -39,7 +39,7 @@ def find_sentences_with_keywords(text, keywords):
     found_sentences = [s for s in sentences if any(word.lower() in s.lower() for word in keywords)]
     return found_sentences if found_sentences else ["Ключевые слова не найдены в статье."]
 
-# ссылку на сайт ввести ТОЛЬКО НОРМАЛЬНУЮ ССЫЛКУ ТВАРИ если у меня че то сломается я вас сама всех
+# вводим свою ссылку на статью
 url = input("Введите ссылку на статью: ").strip()
 keywords = ["АВИАНДР", "Радия-223 хлорид", "Рифаксимин",'IMCIVREE','Эсциталопрам','Афобазол','Баета','Андипал','Алимемазин','Нейромексол','Инозин Пранобекс']
 
